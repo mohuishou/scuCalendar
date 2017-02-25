@@ -1,0 +1,12 @@
+package: GoWork/scujwc
+import:
+- package: github.com/PuerkitoBio/goquery
+  version: ~1.1.0
+- package: github.com/goless/config
+- package: github.com/qiniu/iconv
+  version: ~1.1.1
+- package: golang.org/x/net
+  repo: https://github.com/golang/net
+  subpackages:
+  - html
+- package: github.com/jordic/goics

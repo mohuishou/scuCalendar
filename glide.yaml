@@ -1,0 +1,4 @@
+package: github.com/mohuishou/scuCalendar
+import:
+- package: github.com/mohuishou/scujwc-go
+  version: ~0.1.5

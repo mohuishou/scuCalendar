@@ -1,0 +1,6 @@
+hash: 0a772671d10f836f348023d04040a16046b5632ff74abcfea58bf8b8182fdf01
+updated: 2017-02-26T01:38:03.2851512+08:00
+imports:
+- name: github.com/mohuishou/scujwc-go
+  version: 62f2ac734ef1f793bf4ddd616a6dd6ddd8528afb
+testImports: []
