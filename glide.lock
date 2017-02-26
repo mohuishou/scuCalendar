@@ -1,20 +1,26 @@
 hash: 0a772671d10f836f348023d04040a16046b5632ff74abcfea58bf8b8182fdf01
-updated: 2017-02-26T11:38:24.0654153+08:00
+updated: 2017-02-26T13:36:13.2899483+08:00
 imports:
 - name: github.com/andybalholm/cascadia
   version: 349dd0209470eabd9514242c688c403c0926d266
 - name: github.com/jordic/goics
   version: 482aa91d823471674f535b8a0f2dbfffd9c3585f
 - name: github.com/mohuishou/scujwc-go
-  version: 0c50cd29ce842fee72605101ccece2b4a20c9c67
+  version: 862c84b7ff999b8cdc4fdc33a15fb266b8dd9d3f
 - name: github.com/PuerkitoBio/goquery
   version: e1271ee34c6a305e38566ecd27ae374944907ee9
-- name: github.com/qiniu/iconv
-  version: 95b6ba6f738637e4699b12cce9fad646e8bd9f24
 - name: golang.org/x/net
   version: 10c134ea0df15f7e34d789338c7a2d76cc7a3ab9
   repo: https://github.com/golang/net
   subpackages:
   - html
   - html/atom
+- name: golang.org/x/text
+  version: 4687d739464a2d0af89a25be0318456e0776f3ef
+  subpackages:
+  - encoding
+  - encoding/internal
+  - encoding/internal/identifier
+  - encoding/simplifiedchinese
+  - transform
 testImports: []
