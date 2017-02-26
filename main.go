@@ -21,7 +21,6 @@ func main() {
 	fmt.Println("")
 
 	// 登录
-	var j scujwc.Jwc
 	var (
 		uid      int
 		campus   int
@@ -44,7 +43,7 @@ func main() {
 
 		log.Println("教务处登录中...")
 
-		err := j.Init(uid, password)
+		j, err := scujwc.NewJwc(uid, password)
 		if err != nil {
 			log.Println(err)
 			continue
