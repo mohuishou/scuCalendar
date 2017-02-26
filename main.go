@@ -10,13 +10,13 @@ import (
 )
 
 func main() {
-	fmt.Println("******************************************************")
-	fmt.Println("欢迎使用四川大学课程表转日历文件工具")
-	fmt.Println("纯本地应用，不会上传任何信息到私人服务器")
-	fmt.Println("代码开源,欢迎Star：https://github.com/mohuishou/scuCalendar.git")
-	fmt.Println("微信搜索订阅号：四川大学飞扬俱乐部，报修/绩点/IT资讯等你来查")
-	fmt.Println("微信搜索服务号：scuplus，更多小工具不定期推出")
-	fmt.Println("Power By Mohuishou of FYSCU")
+	fmt.Println("******************************************************\n ")
+	fmt.Println("欢迎使用四川大学课程表转日历文件工具 \n ")
+	fmt.Println("纯本地应用，不会上传任何信息到私人服务器 \n ")
+	fmt.Println("代码开源,欢迎Star：https://github.com/mohuishou/scuCalendar.git \n ")
+	fmt.Println("微信搜索订阅号：四川大学飞扬俱乐部，报修/绩点/IT资讯等你来查 \n ")
+	fmt.Println("微信搜索服务号：scuplus，更多小工具不定期推出 \n ")
+	fmt.Println("Power By Mohuishou of FYSCU \n ")
 	fmt.Println("******************************************************")
 	fmt.Println("")
 
@@ -24,6 +24,7 @@ func main() {
 	var j scujwc.Jwc
 	var (
 		uid      int
+		campus   int
 		password string
 	)
 
@@ -33,6 +34,14 @@ func main() {
 		fmt.Scan(&uid)
 		fmt.Println("请输入您的密码：")
 		fmt.Scan(&password)
+		fmt.Println("请输入您的校区（江安校区请输入1，望江/华西校区:输入2）：")
+		fmt.Scan(&campus)
+
+		if campus < 1 || campus > 2 {
+			log.Println("请输入正确的校区代码：1 or 2")
+			continue
+		}
+
 		log.Println("教务处登录中...")
 
 		err := j.Init(uid, password)
@@ -41,7 +50,7 @@ func main() {
 			continue
 		}
 		log.Println("教务处登录成功,正在获取课程数据...")
-		ical, err = j.Calendar()
+		ical, err = j.Calendar(campus)
 		if err != nil {
 			log.Println(err)
 			continue
@@ -58,9 +67,9 @@ func main() {
 	log.Println("文件生成完成，文件名：ical.ics")
 
 	fmt.Println()
-	fmt.Println("**********************输入任意字符回车退出*********************")
-	fmt.Println("微信搜索订阅号：四川大学飞扬俱乐部，报修/绩点/IT资讯等你来查")
-	fmt.Println("微信搜索服务号：scuplus，更多小工具不定期推出")
+	fmt.Println("**********************输入任意字符回车退出********************* \n ")
+	fmt.Println("微信搜索订阅号：四川大学飞扬俱乐部，报修/绩点/IT资讯等你来查 \n ")
+	fmt.Println("微信搜索服务号：scuplus，更多小工具不定期推出 \n ")
 	fmt.Println("**********************输入任意字符回车退出*********************")
 	fmt.Scan(&password)
 }
